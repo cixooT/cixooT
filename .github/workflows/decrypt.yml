@@ -1,0 +1,45 @@
+name: Decrypt animation
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "decrypt/**"
+      - ".github/workflows/decrypt.yml"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: decrypt-animation
+  cancel-in-progress: true
+
+jobs:
+  render:
+    name: Render animation
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Render SVGs
+        run: python -m decrypt "${{ github.repository_owner }}" --output dist
+
+      - name: Publish to output branch
+        uses: crazy-max/ghaction-github-pages@v4
+        with:
+          target_branch: output
+          build_dir: dist
+          commit_message: "chore: update decrypt animation"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
