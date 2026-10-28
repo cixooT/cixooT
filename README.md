@@ -22,7 +22,7 @@
 🎓 Estudante de Ciência da Computação<br>
 🔎 Em busca do meu **primeiro estágio** — aberto a oportunidades!<br>
 🏆 **3º Lugar** – Hackathon Open Innovation, Dom Helder<br>
-🤖 Interesse em desenvolvimento web e IA/Machine Learning (PyTorch)<br>
+🤖 Interesse em cybersecurity e IA/Machine Learning (PyTorch)<br>
 🎞️ Criando sites interativos com React, GSAP e Webflow
 
 ---
