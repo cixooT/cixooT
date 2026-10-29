@@ -4,7 +4,7 @@
 
 </div>
 
-## 👾 Olá! Eu sou o João Rezende
+## 👾 Opa! Prazer, João Rezende
 
 <div align="center">
 <picture>
